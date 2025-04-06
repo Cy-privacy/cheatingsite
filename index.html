@@ -123,6 +123,11 @@
                     </div>
                     <div class="col-12 col-md-12 col-lg-4">
 <div class="item standart">
+    <!-- Info box for discount code on top of the box -->
+    <div class="info-box">
+        Use code <strong>Synthar</strong> for 15% off for a limited time!
+    </div>
+    
     <div class="item_body">
         <div class="item_body-img">
             <img src="img/synthar.avif" alt="">
@@ -163,9 +168,42 @@
     .buy-btn:hover {
         background: #4a148c; /* Darker purple on hover */
     }
+
+    /* Info box positioned on top of the product box */
+    .info-box {
+        position: absolute;
+        top: -30px; /* Adjusted to position it above the box */
+        left: 1%;
+        transform: translateX(-50%);
+        background-color: #4a148c; /* Orange color */
+        color: white;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        display: none; /* Hidden by default */
+    }
+
+    .info-box.show {
+        display: block; /* Show the info box */
+    }
 </style>
 
 <script type="module" src="https://public.sellhub.cx/embeds.js"></script>
+
+<script>
+    // Show the info box after 2 seconds
+    setTimeout(function() {
+        document.querySelector('.info-box').classList.add('show');
+    }, 1);
+
+    // Hide the info box after 10 seconds
+    setTimeout(function() {
+        document.querySelector('.info-box').classList.remove('show');
+    }, 1200000);
+</script>
+
 
 
 
